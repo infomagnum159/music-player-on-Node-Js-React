@@ -15,7 +15,7 @@ const AlbumSchema = new mongoose.Schema({
     image: String
 });
 
-AlbumSchema.plugin(idValidator);
+AlbumSchema.plugin(idValidator, {message: 'Bad ID value for {PATH}'});
 
 const Album = mongoose.model('Album', AlbumSchema);
 module.exports = Album;
